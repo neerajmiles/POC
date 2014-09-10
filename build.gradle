@@ -15,11 +15,11 @@ version = "1.0"
 apply plugin: "grails"
 apply plugin: 'idea'
 grails {
-    grailsVersion = "2.3.4"
+    grailsVersion = "2.4.3"
 }
 dependencies {
     ['dependencies', 'core', 'spring', 'web', 'plugin-datasource', 'plugin-domain-class', 'plugin-controllers', 'plugin-services'].each { plugin ->
-        compile "org.grails:grails-$plugin:2.3.4"
+        compile "org.grails:grails-$plugin:2.4.3"
     }
     compile 'org.grails.plugins:tomcat:7.0.42'
     compile 'org.grails.plugins:hibernate:3.6.10.3'
