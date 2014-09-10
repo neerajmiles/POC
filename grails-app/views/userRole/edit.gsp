@@ -1,4 +1,4 @@
-<%@ page import="com.miles.auth.UserRole" %>
+<%@ page import="com.miles.login.auth.UserRole" %>
 <!DOCTYPE html>
 <html>
 	<head>

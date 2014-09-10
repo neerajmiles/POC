@@ -1,4 +1,4 @@
-<%@ page import="com.miles.auth.UserRole" %>
+<%@ page import="com.miles.login.auth.UserRole" %>
 
 
 
@@ -7,7 +7,7 @@
 		<g:message code="userRole.role.label" default="Role" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="role" name="role.id" from="${com.miles.auth.Role.list()}" optionKey="id" required="" value="${userRoleInstance?.role?.id}" class="many-to-one"/>
+	<g:select id="role" name="role.id" from="${com.miles.login.auth.Role.list()}" optionKey="id" required="" value="${userRoleInstance?.role?.id}" class="many-to-one"/>
 
 </div>
 
@@ -16,7 +16,7 @@
 		<g:message code="userRole.user.label" default="User" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="user" name="user.id" from="${com.miles.auth.User.list()}" optionKey="id" required="" value="${userRoleInstance?.user?.id}" class="many-to-one"/>
+	<g:select id="user" name="user.id" from="${com.miles.login.auth.User.list()}" optionKey="id" required="" value="${userRoleInstance?.user?.id}" class="many-to-one"/>
 
 </div>
 

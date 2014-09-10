@@ -118,9 +118,9 @@ log4j.main = {
 
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.miles.auth.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.miles.auth.UserRole'
-grails.plugin.springsecurity.authority.className = 'com.miles.auth.Role'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.miles.login.auth.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.miles.login.auth.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.miles.login.auth.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
@@ -130,23 +130,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll'],
-    '/dbconsole/**':                  ['permitAll']
-]
-
-
-
-// Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.miles.auth.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.miles.auth.UserRole'
-grails.plugin.springsecurity.authority.className = 'com.miles.auth.Role'
-grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['permitAll'],
-	'/index':                         ['permitAll'],
-	'/index.gsp':                     ['permitAll'],
-	'/assets/**':                     ['permitAll'],
-	'/**/js/**':                      ['permitAll'],
-	'/**/css/**':                     ['permitAll'],
-	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll']
+    '/dbconsole/**':                  ['permitAll'],
+    '/dbdoc/**' :                     ['permitAll']
 ]
 
