@@ -1,14 +1,16 @@
 package com.miles.login.auth
 
-
+import com.miles.login.auth.User
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.springframework.security.access.annotation.Secured
+import com.miles.login.auth.*
+
 
 @Transactional(readOnly = true)
-@Secured(['ROLE_ADMIN','IS_AUTHENTICATED_FULLY'])
-class UserController {
+@Secured('permitAll')
+class ForgotController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 

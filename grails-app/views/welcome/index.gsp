@@ -15,6 +15,9 @@
 		<sec:ifAnyGranted roles="ROLE_ADMIN">
                 <h3>You are logged in as a Admin.</h3>
         </sec:ifAnyGranted>
+        <sec:ifAnyGranted roles="ROLE_USER">
+                        <h3>You are logged in as a USER.</h3>
+        </sec:ifAnyGranted>
 
 		</h1>
 
@@ -35,7 +38,7 @@
 					<tr>
 					
 					</tr>
-				</thead>
+			 </thead>
 				<tbody>
 				<g:each in="${welcomeInstanceList}" status="i" var="welcomeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">

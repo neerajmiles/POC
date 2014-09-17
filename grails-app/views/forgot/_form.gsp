@@ -1,4 +1,4 @@
-<%@ page import="com.miles.login.auth.User" %>
+<%@ page import="com.miles.auth.User" %>
 
 
 
@@ -17,15 +17,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="password" required="" value="${userInstance?.password}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'email', 'error')} required">
-	<label for="email">
-		<g:message code="user.email.label" default="Email" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="email" required="" value="${userInstance?.email}"/>
 
 </div>
 
