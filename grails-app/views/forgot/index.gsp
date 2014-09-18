@@ -16,7 +16,7 @@ var dynamic_value = "";
 	
 	dynamic_value = document.getElementById("email").value;
 	//alert(dynamic_value);
-	document.form.action = "http://localhost:8080/loginApp/user/edit/"+dynamic_value;
+	document.form.action = "http://localhost:8080/loginApp/forgot/find/"+dynamic_value;
 	}
 	return true ;
 }

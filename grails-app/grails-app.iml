@@ -9,7 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/taglib" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="groovy-2.1.9 (2)" level="application" />
     <orderEntry type="library" name="groovy-2.3.6" level="application" />

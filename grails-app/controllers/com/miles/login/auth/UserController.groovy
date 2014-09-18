@@ -7,7 +7,9 @@ import grails.transaction.Transactional
 import org.springframework.security.access.annotation.Secured
 
 @Transactional(readOnly = true)
-@Secured(['ROLE_ADMIN','IS_AUTHENTICATED_FULLY'])
+//@Secured(['ROLE_ADMIN','IS_AUTHENTICATED_FULLY'])
+//@Secured(['ROLE_USER'])
+@Secured('permitAll')
 class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
