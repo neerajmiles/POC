@@ -12,36 +12,44 @@ import org.springframework.security.access.annotation.Secured
 
 //@Secured(['ROLE_ADMIN','IS_AUTHENTICATED_FULLY'])
 @Log4j
-class ForgotController
-{
+class ForgotController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-   // def scaffold = false
+    // def scaffold = false
+    def mailService
 
 
-
-    def index(Integer max)
-    {
+    def index(Integer max) {
         //params.max = Math.min(max ?: 10, 100)
-       // respond User.list(params), model:[userInstanceCount: User.count()]
+        // respond User.list(params), model:[userInstanceCount: User.count()]
     }
 
-    def show(User userInstance)
-    {
+    def show(User userInstance) {
         respond userInstance
     }
 
 
-
-    def find(String email)
-    {
+    def sendMail(String email) {
+        log.info("Hello")
         log.info(email)
-        respond User.findByEmail(email)
+       // def email=link.tokenize("/").last()
 
+        def mail = mailService.sendMail
+        {
+            to "${email}"
+            from "miles.in"
+            subject "Password Reset Link"
+
+            body "http://localhost:8080/loginApp/forgot/find/${URLEncoder.encode(email)}"
+        }
     }
 
+    def find(String email) {
+        log.info(email)
+        respond User.findByEmail(URLDecoder.decode(email))
 
+    }
 
 
 }

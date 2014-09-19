@@ -2,6 +2,22 @@
 <HEAD>
 <TITLE>Forgot Password Form</TITLE>
 <SCRIPT language=JavaScript>
+
+function sendMail(dynamic_value)
+ {
+
+alert(dynamic_value);
+    var staticlink = "http://localhost:8080/loginApp/forgot/find/"+dynamic_value;
+    var link = "mailto:"+dynamic_value             
+             + "&subject=" + escape("Password Reset Link") 
+			 
+            + "&body=" + escape(staticlink)
+  //  ;
+	
+alert(link);
+
+    window.location.href = link;
+}
 function checkform (form )
 {
 var dynamic_value = "";
@@ -15,8 +31,13 @@ var dynamic_value = "";
 	{
 	
 	dynamic_value = document.getElementById("email").value;
+	//sendMail(dynamic_value);
 	//alert(dynamic_value);
-	document.form.action = "http://localhost:8080/loginApp/forgot/find/"+dynamic_value;
+
+	var link = "http://localhost:8080/loginApp/forgot/find/"+dynamic_value
+
+	//document.form.action = "http://localhost:8080/loginApp/forgot/sendMail/"+encodeURIComponent(link);
+	document.form.action = "http://localhost:8080/loginApp/forgot/sendMail/"+dynamic_value;
 	}
 	return true ;
 }
