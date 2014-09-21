@@ -44,7 +44,7 @@
             </div>
             <div class="form-group">
               <input type='submit' id="submit" class="btn btn-primary btn-lg btn-block" value='${message(code: "springSecurity.login.button")}'/>
-              <span class="pull-right"><a href="#">Register</a></span><span><a href="/loginApp/forgot/">Forgot Password?</a></span>
+              <span class="pull-right"><a href="/loginApp/user/create">Register</a></span><span><a href="/loginApp/forgot/">Forgot Password?</a></span>
             </div>
           </form>
       </div>
