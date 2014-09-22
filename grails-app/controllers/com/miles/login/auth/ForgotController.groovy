@@ -53,6 +53,7 @@ class ForgotController {
             println "Decoded Data:  " + new String(decodedData)
 
             //body "http://localhost:8080/loginApp/forgot/find/${URLEncoder.encode(email)}"
+            //body "http://localhost:8080/loginApp/forgot/findEmail?email=${new String(encodedData)}"
             body "http://localhost:8080/loginApp/forgot/findEmail?email=${new String(encodedData)}"
 
         }
