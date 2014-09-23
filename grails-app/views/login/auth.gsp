@@ -5,7 +5,7 @@
     <title>Simple Login Template | PrepBootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <asset:javascript src="jquery-1.10.2.min.js"/>
+        <asset:javascript src="jquery-1.10.2.min.js"/>
         <asset:javascript src="bootstrap.min.js"/>
         <asset:stylesheet href="bootstrap.min.css"/>
         <asset:stylesheet href="font-awesome.min.css"/>
@@ -29,10 +29,13 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           <h1 class="text-center">Login</h1>
       </div>
-       <div class="modal-header">
-            <g:if test='${flash.message}'>
-      			<div class='login_message' class="form-control input-lg">${flash.message}</div>
-      		</g:if>
+       <div class="alert alert-error">
+           <g:if test='${flash.message}'>
+            <div class="alert alert-error">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <font size="3" color="red">Error! ${flash.message}</font>
+            </div>
+           </g:if>
       	</div>
       <div class="modal-body">
           <form action='${postUrl}' method='POST' id='loginForm'class="form col-md-12 center-block">

@@ -19,6 +19,15 @@ class UserController {
         respond User.list(params), model:[userInstanceCount: User.count()]
     }
 
+    def search(String user,Integer max) {
+        if(!user){
+            user=params.user
+            println "User"+user
+        }
+        params.max = Math.min(max ?: 10, 100)
+        respond User.findAllByUsernameLike("${user}%"), model:[userInstanceCount: User.count()]
+    }
+
     def show(User userInstance) {
         respond userInstance
     }
