@@ -28,7 +28,11 @@ class User {
 		UserRole.findAllByUser(this).collect { it.role }
 	}
 
-	def beforeInsert() {
+	/*def onLoad(){
+        password = springSecurityService?.passwordEncoder ? springSecurityService.decodePassword(password) : password
+    }*/
+
+    def beforeInsert() {
 		encodePassword()
 	}
 

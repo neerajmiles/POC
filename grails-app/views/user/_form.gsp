@@ -1,7 +1,5 @@
 <%@ page import="com.miles.login.auth.User" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
 	<label for="username">
 		<g:message code="user.username.label" default="Username" />
@@ -63,5 +61,6 @@
 	</label>
 	<g:checkBox name="passwordExpired" value="${userInstance?.passwordExpired}" />
 
+</div>
 </div>
 
