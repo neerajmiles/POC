@@ -36,13 +36,13 @@
 			<table>
 			<thead>
 					<tr>
-					
+
 					</tr>
 			 </thead>
 				<tbody>
 				<g:each in="${welcomeInstanceList}" status="i" var="welcomeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
+
 					</tr>
 				</g:each>
 				</tbody>
@@ -53,19 +53,6 @@
 		</div>
 
 
-             <sec:ifAnyGranted roles="ROLE_ADMIN">
-                        <h3>You are logged in as a Admin.</h3>
 
-
-                </sec:ifAnyGranted>
-                <sec:ifAnyGranted roles="ROLE_USER">
-
-
-                        <h3>You are logged in as a USER.</h3>
-
-                        <g:render template="/loginApp/welcome/welcome_user"/>
-
-
-                </sec:ifAnyGranted>
 	</body>
 </html>

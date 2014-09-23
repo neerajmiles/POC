@@ -6,11 +6,6 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
-		  <asset:javascript src="jquery-1.10.2.min.js"/>
-                        <asset:javascript src="bootstrap.min.js"/>
-                        <asset:stylesheet href="bootstrap.min.css"/>
-                        <asset:stylesheet href="font-awesome.min.css"/>
-
 	</head>
 	<body>
 	<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
@@ -89,13 +84,10 @@
 			</ol>
 			<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="btn btn-primary btn-lg " action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="btn btn-primary btn-lg " action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="edit" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
-		</div>
-		</div>
-		</div>
 		</div>
 	</body>
 </html>
