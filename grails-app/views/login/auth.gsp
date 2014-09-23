@@ -20,32 +20,43 @@
     <h1 align="center">Miles Login <small>Demonstrating a simple login functionality</small></h1>
 </div>
 
-<!-- Simple Login - START -->
-<div class='fheader' class="form-control input-lg"><g:message code="springSecurity.login.header"/></div>
 
-		<g:if test='${flash.message}'>
-			<div class='login_message' class="form-control input-lg">${flash.message}</div>
-		</g:if>
+<!--login modal-->
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h1 class="text-center">Login</h1>
+      </div>
+       <div class="modal-header">
+            <g:if test='${flash.message}'>
+      			<div class='login_message' class="form-control input-lg">${flash.message}</div>
+      		</g:if>
+      	</div>
+      <div class="modal-body">
+          <form action='${postUrl}' method='POST' id='loginForm'class="form col-md-12 center-block">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Email" name='j_username' id='username'>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password" input type='password' class='text_' name='j_password' id='password'>
+            </div>
+            <div class="form-group">
+              <input type='submit' id="submit" class="btn btn-primary btn-lg btn-block" value='${message(code: "springSecurity.login.button")}'/>
+              <span class="pull-right"><a href="#">Register</a></span><span><a href="/loginApp/forgot/">Forgot Password?</a></span>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		  </div>
+      </div>
+  </div>
+  </div>
+</div>
 
-<form class="col-md-12" action='${postUrl}' method='POST' id='loginForm'>
-    <div class="form-group">
-        <input type="text" class="form-control input-lg" placeholder="User" name='j_username' id='username'>
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control input-lg" placeholder="Password" input type='password' class='text_' name='j_password' id='password'>
-    </div>
-    <div class="form-group">
-
-				<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
-			</div>
-
-    <div class="form-group">
-        <input type='submit' id="submit" class="btn btn-primary btn-lg btn-block" value='${message(code: "springSecurity.login.button")}'/>
-        <span><a href="#">Need help?</a></span>
-        <span class="pull-right"><a href="#">New Registration</a></span>
-    </div>
-</form>
 <!-- Simple Login - END -->
 
 </div>
