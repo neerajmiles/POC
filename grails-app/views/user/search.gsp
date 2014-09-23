@@ -34,6 +34,13 @@
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 
+			<g:if test="${!userInstanceList}">
+			  <div class="alert alert-error">
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                            <font size="3" color="red">No Search result to show!</font>
+                        </div>
+			</g:if>
+
 			<g:if test="${userInstanceList}">
 			<table>
 			<thead>
