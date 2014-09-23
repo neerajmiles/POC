@@ -52,8 +52,8 @@ class ForgotController {
             println "Encoded Data:  " + new String(encodedData)
             println "Decoded Data:  " + new String(decodedData)
 
-            //body "http://localhost:8080/loginApp/forgot/find/${URLEncoder.encode(email)}"
-            body "http://localhost:8080/loginApp/forgot/findEmail?email=${new String(encodedData)}"
+            def emailUrl="http://localhost:8080/loginApp/forgot/findEmail?email=${new String(encodedData)}"
+            body(view:'/mail/mailTemplate', model: [link:emailUrl])
 
         }
         //  temp = new String(decodedData)

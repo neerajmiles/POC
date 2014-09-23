@@ -5,7 +5,7 @@
     <title>Simple Login Template | PrepBootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <asset:javascript src="jquery-1.10.2.min.js"/>
+        <asset:javascript src="jquery-1.10.2.min.js"/>
         <asset:javascript src="bootstrap.min.js"/>
         <asset:stylesheet href="bootstrap.min.css"/>
         <asset:stylesheet href="font-awesome.min.css"/>

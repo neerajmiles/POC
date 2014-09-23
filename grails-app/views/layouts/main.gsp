@@ -22,9 +22,10 @@
                 <asset:javascript src="bootstrap.min.js"/>
                 <asset:stylesheet href="bootstrap.min.css"/>
                 <asset:stylesheet href="font-awesome.min.css"/>
+
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
+		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="miles_logo.png" alt="Grails"/></a></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
