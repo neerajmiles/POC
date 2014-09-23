@@ -7,10 +7,9 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.springframework.security.access.annotation.Secured
 import org.apache.commons.codec.binary.Base64
+
 @Transactional(readOnly = true)
 @Secured('permitAll')
-
-//@Secured(['ROLE_ADMIN','IS_AUTHENTICATED_FULLY'])
 @Log4j
 class ForgotController {
 
@@ -19,7 +18,7 @@ class ForgotController {
     // def scaffold = false
     def mailService
 
-    String temp
+   // String temp
     def index(Integer max) {
         //params.max = Math.min(max ?: 10, 100)
         // respond User.list(params), model:[userInstanceCount: User.count()]
@@ -54,11 +53,11 @@ class ForgotController {
             println "Decoded Data:  " + new String(decodedData)
 
             //body "http://localhost:8080/loginApp/forgot/find/${URLEncoder.encode(email)}"
-            body "http://localhost:8080/loginApp/forgot/findEmail/${new String(encodedData)}"
-            temp = new String(decodedData)
-            println "Temp Data :  " + temp
-        }
+            body "http://localhost:8080/loginApp/forgot/findEmail?email=${new String(encodedData)}"
 
+        }
+        //  temp = new String(decodedData)
+        // println "Temp Data :  " + temp
 
 
     }
@@ -73,9 +72,10 @@ class ForgotController {
     }
 
     def findEmail(String email) {
-
-        email = temp
-        respond User.findByEmail(email)
+        Base64 coder = new Base64()
+        def decodedData = coder.decode(email)
+       // println("email:>"+new String(decodedData))
+        respond User.findByEmail(new String(decodedData))
 
 
     }
