@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Simple Login Template | PrepBootstrap</title>
+    <title>Password Status</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <asset:javascript src="jquery-1.10.2.min.js"/>

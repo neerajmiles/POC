@@ -1,21 +1,49 @@
 <%@ page import="com.miles.login.auth.User" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
-		<title><g:message code="default.edit.label" args="[entityName]" /></title>
-	</head>
+<head>
+    <meta charset="utf-8" />
+    <title>Set New Password</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <asset:javascript src="jquery-1.10.2.min.js"/>
+        <asset:javascript src="bootstrap.min.js"/>
+        <asset:stylesheet href="bootstrap.min.css"/>
+        <asset:stylesheet href="font-awesome.min.css"/>
+
+<TITLE>Set New Password Form</TITLE>
+
+</head>
 	<body>
-		<a href="#edit-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				
-			</ul>
-		</div>
-		<div id="edit-user" class="content scaffold-edit" role="main">
-			<h1><g:message code="Set New Password" args="[entityName]" /></h1>
+
+<div class="container">
+
+<div class="page-header">
+    <h1 align="center">Forgot your Password? </h1>
+</div>
+
+
+<!--Set New Password modal-->
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h1 class="text-center">Set New Password</h1>
+      </div>
+       <div class="modal-header">
+
+            <g:if test='${flash.message}'>
+      			<div class='login_message' class="form-control input-lg">${flash.message}</div>
+      		</g:if>
+      	</div>
+      <div class="modal-body">
+
+
+
+
+<div id="edit-user" class="content scaffold-edit" role="main">
+
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -30,11 +58,26 @@
 				<g:hiddenField name="version" value="${userInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
+
 				</fieldset>
 				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+
+					<g:actionSubmit class="btn btn-primary btn-lg btn-block" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 				</fieldset>
 			</g:form>
-		</div>
-	</body>
+	</div>
+
+
+   </form>
+      </div>
+
+  </div>
+  </div>
+</div>
+
+<!-- Set New Password - END -->
+
+</div>
+
+</body>
 </html>

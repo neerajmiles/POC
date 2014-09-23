@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Simple Login Template | PrepBootstrap</title>
+    <title>Retrieve Password</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <asset:javascript src="jquery-1.10.2.min.js"/>
@@ -13,7 +13,7 @@
     
 
 
-<TITLE>Forgot Password Form</TITLE>
+<TITLE>Retrieve Password Form</TITLE>
 <SCRIPT language=JavaScript>
 
 function sendMail(dynamic_value)
@@ -66,7 +66,7 @@ var dynamic_value = "";
 </div>
 
 
-<!--Forgot your Password? modal-->
+<!--Retrieve Password modal-->
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
@@ -106,7 +106,7 @@ var dynamic_value = "";
   </div>
 </div>
 
-<!-- Forgot your Password? - END -->
+<!-- Retrieve Password - END -->
 
 </div>
 
