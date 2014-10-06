@@ -30,6 +30,11 @@ class BootStrap {
             new RequestMap(url: url, configAttribute: 'permitAll').save()
         }
         new RequestMap(url: '/requestMap/**', configAttribute: 'ROLE_ADMIN,IS_AUTHENTICATED_FULLY').save(flush:true)
+        new RequestMap(url: '/forgot/**', configAttribute: 'ROLE_USER,IS_AUTHENTICATED_FULLY').save(flush:true)
+        new RequestMap(url: '/user/**', configAttribute: 'ROLE_USER,IS_AUTHENTICATED_FULLY').save(flush:true)
+        new RequestMap(url: '/welcome/**', configAttribute: 'ROLE_USER,ROLE_ADMIN,IS_AUTHENTICATED_FULLY').save(flush:true)
+
+
     }
     def destroy = {
     }

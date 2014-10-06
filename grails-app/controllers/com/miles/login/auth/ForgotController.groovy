@@ -9,7 +9,7 @@ import org.springframework.security.access.annotation.Secured
 import org.apache.commons.codec.binary.Base64
 
 @Transactional(readOnly = true)
-@Secured('permitAll')
+
 @Log4j
 class ForgotController {
 

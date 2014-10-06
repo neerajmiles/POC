@@ -26,7 +26,7 @@ import org.springframework.security.authentication.LockedException
 import org.springframework.security.core.context.SecurityContextHolder as SCH
 import org.springframework.security.web.WebAttributes
 
-@Secured('permitAll')
+//@Secured('permitAll')
 class LoginController {
 
 	/**
