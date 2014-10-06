@@ -35,7 +35,7 @@ class LogoutController {
             session.invalidate()
             redirect uri: SpringSecurityUtils.securityConfig.logout.afterLogoutUrl
         } else {
-            redirect uri: SpringSecurityUtils.securityConfig.logout.afterLogoutUrl
+          //  redirect action: auth, params: params
         }
     }
 

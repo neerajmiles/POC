@@ -9,7 +9,7 @@ import org.springframework.security.access.annotation.Secured
 @Transactional(readOnly = true)
 //@Secured(['ROLE_ADMIN','IS_AUTHENTICATED_FULLY'])
 //@Secured(['ROLE_USER'])
-//@Secured('permitAll')
+@Secured('permitAll')
 class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -32,7 +32,8 @@ class UserController {
         respond userInstance
     }
 
-    def create() {
+    def create()
+    {
         respond new User(params)
     }
 

@@ -19,7 +19,7 @@
 <div class="container">
 
 <div class="page-header">
-    <h1 align="center">Forgot your Password? </h1>
+    <h1 align="center"> </h1>
 </div>
 
 

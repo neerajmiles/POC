@@ -18,6 +18,7 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
+
 			<g:hasErrors bean="${userInstance}">
 			<ul class="errors" role="alert">
 				<g:eachError bean="${userInstance}" var="error">
@@ -25,6 +26,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
+
 			<g:form url="[resource:userInstance, action:'update']" method="PUT" >
 				<g:hiddenField name="version" value="${userInstance?.version}" />
 
@@ -39,6 +41,7 @@
 				    </div>
 				</fieldset>
 			</g:form>
+
 		</div>
 		</div>
 		</div>

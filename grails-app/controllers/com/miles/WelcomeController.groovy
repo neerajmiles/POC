@@ -1,13 +1,17 @@
 package com.miles
 
-
+import com.miles.login.auth.User
+import grails.converters.JSON
+import groovy.json.JsonBuilder
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.springframework.security.access.annotation.Secured
 
 @Transactional(readOnly = true)
-@Secured(['ROLE_USER','ROLE_ADMIN','IS_AUTHENTICATED_FULLY'])
+
+@Secured('permitAll')
+
 class WelcomeController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -17,9 +21,49 @@ class WelcomeController {
         respond Welcome.list(params), model:[welcomeInstanceCount: Welcome.count()]
     }
 
-    def show(Welcome welcomeInstance) {
-        respond welcomeInstance
+    def show(User userInstance) {
+        respond userInstance
     }
+
+
+    /* Org
+    def search(String user,Integer max)
+    {
+        if(!user){
+            user=params.user
+            println "User"+user
+        }
+        params.max = Math.min(max ?: 10, 100)
+        respond User.findAllByUsernameLike("${user}%"), model:[userInstanceCount: User.count()]
+
+    }*/
+
+    def search(String user,Integer max)
+    {
+        if(!user){
+            user=params.user
+            println "User"+user
+        }
+        params.max = Math.min(max ?: 10, 100)
+       // respond User.findAllByUsernameLike("${user}%"), model:[userInstanceCount: User.count()]
+       // render User.findAll() as JSON
+
+        def data = User.findAll() as JSON
+        System.out.println("JSON Data : " +data);
+        respond User.findAllByUsernameLike("${user}%"), model:[userInstanceCount: User.count()]
+    }
+
+    def searchadmin(String user,Integer max)
+    {
+        if(!user){
+            user=params.user
+            println "User"+user
+        }
+        params.max = Math.min(max ?: 10, 100)
+        respond User.findAllByUsernameLike("${user}%"), model:[userInstanceCount: User.count()]
+
+    }
+
 
     def create() {
         respond new Welcome(params)
@@ -48,9 +92,19 @@ class WelcomeController {
         }
     }
 
-    def edit(Welcome welcomeInstance) {
-        respond welcomeInstance
+    def edit(User userInstance) {
+        respond userInstance
     }
+
+
+   /* def edit(String id) {
+        //log.info(email)
+        println "URL :  " +id
+        respond User.findById(id)
+
+
+    }*/
+
 
     @Transactional
     def update(Welcome welcomeInstance) {
@@ -93,6 +147,7 @@ class WelcomeController {
             '*'{ render status: NO_CONTENT }
         }
     }
+
 
     protected void notFound() {
         request.withFormat {
