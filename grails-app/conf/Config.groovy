@@ -133,6 +133,9 @@ log4j.main = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.miles.login.auth.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.miles.login.auth.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.miles.login.auth.Role'
+grails.plugin.springsecurity.requestMap.className = 'com.miles.login.auth.RequestMap'
+grails.plugin.springsecurity.securityConfigType = "Requestmap"
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
@@ -145,4 +148,3 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/dbconsole/**':                  ['permitAll'],
     '/dbdoc/**' :                     ['permitAll']
 ]
-
