@@ -13,8 +13,8 @@
 				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
-		<div id="create-welcome" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+		<div id="create-welcome" class="well form-search" role="main">
+			<h2><g:message code="Create New User" args="[entityName]" /></h2>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -30,7 +30,7 @@
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+					<p>&nbsp&nbsp&nbsp&nbsp&nbsp<g:submitButton name="create" class="btn" value="${message(code: 'default.button.create.label', default: 'Create')}" /></p>
 				</fieldset>
 			</g:form>
 		</div>

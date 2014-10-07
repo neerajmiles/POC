@@ -26,10 +26,10 @@
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
           <h1 class="text-center">Login</h1>
       </div>
-       <div class="alert alert-error">
+       <div class="">
            <g:if test='${flash.message}'>
             <div class="alert alert-error">
                 <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -51,11 +51,7 @@
             </div>
           </form>
       </div>
-      <div class="modal-footer">
-          <div class="col-md-12">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		  </div>
-      </div>
+
   </div>
   </div>
 </div>

@@ -29,7 +29,7 @@
                 <g:layoutHead/>
 
 	</head>
-    <div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="miles_logo.png" alt="Grails"/></a></div>
+    <div id="grailsLogo" role="banner"><a href="#"><asset:image src="miles_logo.png" alt="Grails"/></a></div>
 
 	<body>
 	 <nav class="navbar navbar-default" role="navigation">

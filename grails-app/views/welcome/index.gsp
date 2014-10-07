@@ -21,13 +21,13 @@
         }
 
         #items {
-            left: 20px;
+            left: 60px;
             top : 50px;
 
         }
 
         #dropbox {
-            left: 1200px;
+            left: 1150px;
             top : 50px;
         }
 
@@ -94,9 +94,9 @@
 
                 <ul>
                     <li><a class="home" href="${createLink(uri: '/')}"><font color="white"><g:message code="default.home.label"/></font></a></li>
-                    <li><g:link class="create" action="create"><font color="white"><g:message code="default.new.label" args="[entityName]" /></font></g:link></li>
+                    <li><g:link class="create" action="create"><font color="white"><g:message code="New User" args="[entityName]" /></font></g:link></li>
                 </ul>
-		<label>Search:</label>
+		<label>Search :</label>
 		<input name="user" id="user" type="text" required  ng-model="keywords" class="input-medium search-query" placeholder="Keywords...">
 
 		  <button type="submit" class="btn" ng-click="search()">Go!</button>
@@ -164,7 +164,7 @@ function SearchCtrl($window,$scope, $http) {
 
 
 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <img src="/loginApp/assets/miles_logo.png" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="50">
+  <img src="/loginApp/assets/miles_logo.png" draggable="true" ondragstart="drag(event)" id="drag1" width="290" height="50">
 
 </div>
 
