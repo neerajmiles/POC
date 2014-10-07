@@ -11,25 +11,24 @@
       <asset:javascript src="DropTargetDirective.js"/>
       <asset:javascript src="DraggableDirective.js"/>
       <asset:javascript src="MainController.js"/>
-        <asset:javascript src="angular_js.js"/>
-        <asset:stylesheet href="angular_css.css"/>
-        <asset:javascript src="search.js"/>
+
 
 
 
     <style lang="css">
         #main {
-            width: 610px;
-            min-height: 212px;
-            position: relative;
+
         }
 
         #items {
-            left: 397px;
+            left: 20px;
+            top : 50px;
+
         }
 
         #dropbox {
-            left: 825px;
+            left: 1200px;
+            top : 50px;
         }
 
         #items, #dropbox {
@@ -51,13 +50,17 @@
     </style>
 
    <style>
-   #div1, #div2
-   {float:left; width:200px; height:35px; margin:10px;padding:50px;border:1px solid #aaaaaa;}
+   #div1
+   {float:left; width:250px; height:35px; margin:50px;padding:50px;border:10px solid #aaaaaa;}
+   #div2
+   {float:right; width:250px; height:35px; margin:50px;padding:50px;border:10px solid #aaaaaa;}
    </style>
     <g:set var="entityName" value="${message(code: 'welcome.label', default: 'Welcome')}" />
 
-
-
+        <asset:javascript src="angular_js.js"/>
+        <asset:stylesheet href="angular_css.css"/>
+        <asset:javascript src="search.js"/>
+        <asset:javascript src="jquery-1.10.2.min.js"/>
 
     </head>
 
@@ -161,7 +164,7 @@ function SearchCtrl($window,$scope, $http) {
 
 
 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <img src="/loginApp/assets/miles_logo.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+  <img src="/loginApp/assets/miles_logo.png" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="50">
 
 </div>
 
