@@ -11,7 +11,9 @@
       <asset:javascript src="DropTargetDirective.js"/>
       <asset:javascript src="DraggableDirective.js"/>
       <asset:javascript src="MainController.js"/>
-
+        <asset:javascript src="angular_js.js"/>
+        <asset:stylesheet href="angular_css.css"/>
+        <asset:javascript src="search.js"/>
 
 
 
@@ -54,10 +56,8 @@
    </style>
     <g:set var="entityName" value="${message(code: 'welcome.label', default: 'Welcome')}" />
 
-        <asset:javascript src="angular_js.js"/>
-        <asset:stylesheet href="angular_css.css"/>
-        <asset:javascript src="search.js"/>
-        <asset:javascript src="jquery-1.10.2.min.js"/>
+
+
 
     </head>
 
