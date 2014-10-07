@@ -20,18 +20,20 @@ class BootStrap {
 
 
         UserRole.create testUser, userRole, true
+        UserRole.create testUser2, userRole, true
         UserRole.create adminUser, adminRole, true
 
         for (String url in [
                 '/', '/index', '/index.gsp', '*//**//*favicon.ico','/assets*//**',
                 '*//**//*js*//**', '*//**//*css*//**', '*//**//*images*//**',
                 '/login', '/login.*', '/login*//*',
-                '/logout', '/logout.*', '/logout*//*','/dbconsole*//*']) {
+                '/logout', '/logout.*', '/logout*//*','/dbconsole*//*','/forgot/**']) {
             new RequestMap(url: url, configAttribute: 'permitAll').save()
         }
         new RequestMap(url: '/requestMap/**', configAttribute: 'ROLE_ADMIN,IS_AUTHENTICATED_FULLY').save(flush:true)
-        new RequestMap(url: '/forgot/**', configAttribute: 'ROLE_USER,IS_AUTHENTICATED_FULLY').save(flush:true)
-        new RequestMap(url: '/user/**', configAttribute: 'ROLE_USER,IS_AUTHENTICATED_FULLY').save(flush:true)
+        new RequestMap(url: '/user/**', configAttribute: 'ROLE_ADMIN,IS_AUTHENTICATED_FULLY').save(flush:true)
+        new RequestMap(url: '/role/**', configAttribute: 'ROLE_ADMIN,IS_AUTHENTICATED_FULLY').save(flush:true)
+        new RequestMap(url: '/userRole/**', configAttribute: 'ROLE_ADMIN,IS_AUTHENTICATED_FULLY').save(flush:true)
         new RequestMap(url: '/welcome/**', configAttribute: 'ROLE_USER,ROLE_ADMIN,IS_AUTHENTICATED_FULLY').save(flush:true)
 
 
