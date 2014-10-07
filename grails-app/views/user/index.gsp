@@ -8,7 +8,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-	     <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+	     <p><div id="loginModal" class="well form-search" tabindex="-1" role="dialog" aria-hidden="true"></p>
           <div class="modal-dialog" width="whatever" >
           <div class="modal-content" overflow-y="auto">
 

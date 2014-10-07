@@ -67,11 +67,12 @@ var dynamic_value = "";
 
 
 <!--Retrieve Password modal-->
+
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
           <h1 class="text-center">Forgot Password?</h1>
       </div>
        <div class="modal-header">
@@ -105,6 +106,7 @@ var dynamic_value = "";
   </div>
   </div>
 </div>
+
 
 <!-- Retrieve Password - END -->
 

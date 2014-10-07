@@ -7,14 +7,14 @@
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-	 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+	 <p><div align="center" id="loginModal" class="well form-search" tabindex="-1" role="dialog" aria-hidden="true">
      <div class="modal-dialog">
      <div class="modal-content">
 
 	  <div class="container">
 
 		<div id="edit-user" class="content scaffold-edit" role="main">
-			<h1 class="btn btn-primary " ><g:message code="default.edit.label" args="[entityName]" /></h1>
+
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -46,6 +46,6 @@
 		</div>
 		</div>
 		</div>
-	 </div>
+	 </div></p>
 	</body>
 </html>
