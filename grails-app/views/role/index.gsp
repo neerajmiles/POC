@@ -15,8 +15,8 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
-		<div id="list-role" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+		<div align="center" id="list-role" class="well form-search" role="main">
+			<h2><g:message code="default.list.label" args="[entityName]" /></h2>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
