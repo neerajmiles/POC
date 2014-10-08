@@ -3,7 +3,7 @@
 
     <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+
 
 <g:set var="entityName" value="${message(code: 'welcome.label', default: 'Welcome')}" />
       <asset:javascript src="jquery-1.10.2.min.js"/>
@@ -11,6 +11,14 @@
       <asset:javascript src="DropTargetDirective.js"/>
       <asset:javascript src="DraggableDirective.js"/>
       <asset:javascript src="MainController.js"/>
+      <asset:javascript src="search.js"/>
+      <asset:javascript src="angularjs.js"/>
+      <asset:javascript src="ng-grid.min.js"/>
+      <asset:stylesheet href="angular_css.css"/>
+      <asset:stylesheet href="ng-grid.css"/>
+
+
+
 
 
 
@@ -47,6 +55,11 @@
             cursor: pointer;
             font-weight: bold;
         }
+        .gridStyle {
+                border: 1px solid rgb(212,212,212);
+                width: 500px;
+                height: 300px
+                }
     </style>
 
    <style>
@@ -57,10 +70,6 @@
    </style>
     <g:set var="entityName" value="${message(code: 'welcome.label', default: 'Welcome')}" />
 
-        <asset:javascript src="angular_js.js"/>
-        <asset:stylesheet href="angular_css.css"/>
-        <asset:javascript src="search.js"/>
-        <asset:javascript src="jquery-1.10.2.min.js"/>
 
     </head>
 
@@ -98,12 +107,11 @@
                 </ul>
 		<label>Search :</label>
 		<input name="user" id="user" type="text" required  ng-model="keywords" class="input-medium search-query" placeholder="Keywords...">
-
-		  <button type="submit" class="btn" ng-click="search()">Go!</button>
-
+			<button class="btn" ng-click="search()">Go!</button>
     </form>
-
+    <div class="gridStyle" ng-show="showGridFlag" ng-grid="gridOptions"></div>
 </div>
+
 
 <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:50px;'>
   <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
@@ -125,42 +133,39 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 }
 
-function SearchCtrl($window,$scope, $http) {
-
-
+var app=angular.module('dd', ['ngGrid']);
+function SearchCtrl($window,$scope,$http) {
+//app.controller('SearchCtrl', function($window,$scope,$http) {
 	// The function that will be executed on button click (ng-click="search()")
 	$scope.search = function()
         {
-
-		var searchval = $("input[name=user]").val();
- var link ="";
-   if(searchval=='')
-   {
-                 form.user.focus();
-           		 link = "#"
-                 document.form.action = link;
-                 $window.location.href = link;
-
-
-   }
-   else
-   {
-             	link = "/loginApp/welcome/search"
-            	$window.location.href = link;
-
-   }
-
-
+         $http.get('/loginApp/welcome/search').success(function(data) {
+                                                               $scope.users = data;
+                                                             });
+        $scope.showGridFlag='true';
+        console.log($scope.gridOptions);
+        $scope.gridOptions = {  data: 'users',
+                 enableRowSelection: false,
+                 enableCellEditOnFocus: true,
+                 multiSelect: false,
+                columnDefs: [
+                   { field: 'class', displayName: 'Class', enableCellEdit: false } ,
+                   { field: 'id', displayName: 'ID', enableCellEdit: false },
+                   { field: 'accountExpired', displayName: 'AccountExpired', enableCellEdit: false },
+                   { field: 'accountLocked', displayName: 'AccountLocked', enableCellEdit: false },
+                   { field: 'email', displayName: 'Email', enableCellEdit: false },
+                   { field: 'enabled', displayName: 'Enabled', enableCellEdit: false }
+                 ]
+               };
+        }
 	};
-}
+
 
 
 
 
 </script>
 
-        <!-- The single AngularJS include -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.5/angular.min.js"></script>
 
 
 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
