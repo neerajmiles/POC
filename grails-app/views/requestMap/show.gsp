@@ -6,30 +6,37 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'requestMap.label', default: 'RequestMap')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<style>
+        ol {
+            display: block;
+            list-style-type: decimal;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 590px;
+        }
+        </style>
 	</head>
 	<body>
-		<a href="#show-requestMap" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="show-requestMap" class="well form-search" role="main">
-			<h2><g:message code="default.show.label" args="[entityName]" /></h2>
+
+<h3><g:message code="default.show.label" args="[entityName]" /></h3>
+		<div  id="show-requestMap" class="well form-search" role="main">
+
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+			<div align = "center" class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list requestMap">
-			
+			<table border="1" style="width:100%">
 				<g:if test="${requestMapInstance?.url}">
-				<p><li class="fieldcontain">
+				<tr>
+				<li class="fieldcontain">
 					<span id="url-label" class="property-label"><g:message code="requestMap.url.label" default="Url" /></span>
 					
 						<span class="property-value" aria-labelledby="url-label"><g:fieldValue bean="${requestMapInstance}" field="url"/></span>
 					
-				</li></p>
+				</li>
+				</tr>
 				</g:if>
 			
 				<g:if test="${requestMapInstance?.configAttribute}">
@@ -40,14 +47,21 @@
 					
 				</li></p>
 				</g:if>
-			
+			</table>
 			</ol>
 			<g:form url="[resource:requestMapInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
+				<fieldset align="center" class="buttons">
 					<g:link class="btn" action="edit" resource="${requestMapInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>
+		<div class="nav" role="navigation">
+        			<ul>
+        				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+        				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+        				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+        			</ul>
+        		</div>
 	</body>
 </html>

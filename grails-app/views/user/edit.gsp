@@ -5,8 +5,10 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+
 	</head>
 	<body>
+	<h3><g:message code="Edit User" args="[entityName]" /></h3>
 	 <p><div align="center" id="loginModal" class="well form-search" tabindex="-1" role="dialog" aria-hidden="true">
      <div class="modal-dialog">
      <div class="modal-content">
@@ -36,7 +38,7 @@
 				<fieldset class="buttons">
 				     <div class="control-group">
                      <div class="controls">
-                    <g:actionSubmit class="btn btn-primary btn-lg" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+                    <g:actionSubmit class="btn" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 				    </div>
 				    </div>
 				</fieldset>

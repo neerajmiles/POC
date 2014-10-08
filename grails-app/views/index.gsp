@@ -81,13 +81,11 @@
 		</style>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		
-		<div id="page-body" role="main" >
 
-			<h1 align="left"><br/>
-			Welcome to Miles Login
-			</h1>
+		<h3 align="left"><br/>        			Welcome to Miles Login        			</h3>
+		<div id="page-body" class="well form-search" role="main" >
+
+
 			<p></p>
 
 			<div id="controller-list" role="navigation">

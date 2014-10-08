@@ -28,6 +28,8 @@
                 <asset:stylesheet href="font-awesome.min.css"/>
                 <g:layoutHead/>
 
+
+
 	</head>
     <div id="grailsLogo" role="banner"><a href="#"><asset:image src="miles_logo.png" alt="Grails"/></a></div>
 

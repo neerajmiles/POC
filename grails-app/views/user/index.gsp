@@ -6,18 +6,31 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<style>
+                        table, th, td {
+                            border: 2px solid black;
+                            border-collapse: collapse;
+
+                            background-color: #e5e5e5;
+
+                        }
+                        th, td {
+                            padding: 5px;
+                        }
+        </style>
 	</head>
 	<body>
-	     <p><div id="loginModal" class="well form-search" tabindex="-1" role="dialog" aria-hidden="true"></p>
+	<h3><g:message code="default.list.label" args="[entityName]" /></h3>
+	     <div id="loginModal" class="well form-search" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog" width="whatever" >
           <div class="modal-content" overflow-y="auto">
 
         <div id="list-user" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table class="table table-condensed">
+			<table align="center" border="1" style="width:50%">
 			<thead>
 					<tr>
 					
@@ -64,5 +77,11 @@
 		</div>
 		</div>
 		</div>
+		<div class="nav" role="navigation">
+                			<ul>
+                				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                				<g:link class="btn" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+                			</ul>
+        </div>
 	</body>
 </html>

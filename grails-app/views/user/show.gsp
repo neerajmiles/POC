@@ -6,18 +6,29 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
-
+<style>
+                ol {
+                    display: block;
+                    list-style-type: decimal;
+                    margin-top: 1em;
+                    margin-bottom: 1em;
+                    margin-left: 0;
+                    margin-right: 0;
+                    padding-left: 590px;
+                }
+</style>
 	</head>
 	<body >
-
+<h3 align="left"><g:message code="default.show.label" args="[entityName]" /></h3>
 	<p><div id="loginModal" class="well form-search" tabindex="-1" role="dialog" aria-hidden="true"></p>
             <div class="modal-dialog">
             <div class="modal-content">
     <div  id="show-user" class="content scaffold-show" role="main">
-			<h1 align="left"><g:message code="default.show.label" args="[entityName]" /></h1>
+
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+			<div align="center" class="message" role="status">${flash.message}</div>
 			</g:if>
+
 			<ol class="property-list user">
 
 				<g:if test="${userInstance?.username}">
@@ -82,30 +93,32 @@
 					
 				</li></p>
 				</g:if>
-			
-			</ol>
 			<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<p><g:link class="btn" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link></p>
+            				<fieldset  align="center"class="buttons">
+            					<p><g:link class="btn" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link></p>
 
 
-					<sec:ifAnyGranted roles="ROLE_USER">
-					<g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" disabled="true"/>
-					</sec:ifAnyGranted>
-                    <fieldset class="buttons">
-                    				     <div class="control-group">
-                         <div class="controls">
-                    <sec:ifAnyGranted roles="ROLE_ADMIN">
+            					<sec:ifAnyGranted roles="ROLE_USER">
+            					<g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" disabled="true"/>
+            					</sec:ifAnyGranted>
+                                <fieldset class="buttons">
+                                				     <div class="control-group">
+                                     <div class="controls">
+                                <sec:ifAnyGranted roles="ROLE_ADMIN">
 
-                    <g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                                <g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 
-                    </sec:ifAnyGranted>
-                    				    </div>
-                    	 </div>
-                    </fieldset>
+                                </sec:ifAnyGranted>
+                                				    </div>
+                                	 </div>
+                                </fieldset>
 
-				</fieldset>
-			</g:form>
+            				</fieldset>
+            </g:form>
+			</ol>
+            </table>
+
+
 		</div></p>
 	</body>
 </html>

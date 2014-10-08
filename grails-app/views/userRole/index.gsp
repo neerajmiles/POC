@@ -6,21 +6,28 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'userRole.label', default: 'UserRole')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<style>
+                        table, th, td {
+                            border: 2px solid black;
+                            border-collapse: collapse;
+                            background-color: #e5e5e5;
+
+                        }
+                        th, td {
+                            padding: 5px;
+                        }
+        </style>
 	</head>
 	<body>
-		<a href="#list-userRole" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+	<h3><g:message code="default.list.label" args="[entityName]" /></h3>
+
+
 		<div align="center" id="list-userRole" class="well form-search" role="main">
-			<h2><g:message code="default.list.label" args="[entityName]" /></h2>
+
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
+			<table border="1" style="width:35%">
 			<thead>
 					<tr>
 					
@@ -46,5 +53,11 @@
 				<g:paginate total="${userRoleInstanceCount ?: 0}" />
 			</div>
 		</div>
+		<div class="nav" role="navigation">
+        			<ul>
+        				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+        				<g:link class="btn" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+        			</ul>
+        </div>
 	</body>
 </html>

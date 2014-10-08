@@ -11,13 +11,13 @@
 
 	</head>
 	<body>
-
-		<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+<h3><g:message code="default.create.label" args="[entityName]" /></h3>
+		<div align="center" id="loginModal" class="well form-search" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
 
 		<div id="create-user" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -38,10 +38,10 @@
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
-				<fieldset class="buttons">
+				<fieldset align ="center" class="buttons">
 				   <div class="control-group">
 				    <div class="controls">
-					<g:submitButton class="btn btn-primary btn-lg btn-block" name="create" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+					<g:submitButton class="btn" name="create" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				    </div>
 				    </div>
 				</fieldset>
