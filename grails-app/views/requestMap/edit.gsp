@@ -21,7 +21,7 @@
 	<body>
 <h3><g:message code="default.edit.label" args="[entityName]" /></h3>
 
-		<div id="edit-requestMap" class="well form-search" role="main">
+		<div align="center" id="edit-requestMap" class="well form-search" role="main">
 
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
@@ -47,7 +47,7 @@
         			<ul>
         				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
         				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-        				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+        				<g:link class="btn" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
         			</ul>
         		</div>
 	</body>
