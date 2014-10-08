@@ -10,7 +10,7 @@
                         table, th, td {
                             border: 2px solid black;
                             border-collapse: collapse;
-                            background-color: #e5e5e5;
+                            background-color: #66CCFF;
 
                         }
                         th, td {
