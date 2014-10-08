@@ -44,25 +44,12 @@ class WelcomeController {
             user=params.user
             println "User"+user
         }
-        params.max = Math.min(max ?: 10, 100)
-       // respond User.list(params), model:[userInstanceCount: User.count()]
-        //respond User.findAllByUsernameLike("${user}%"), model:[userInstanceCount: User.count()]
+       params.max = Math.min(max ?: 10, 100)
        render User.findAll() as JSON
-               //def result = [:]
-        //result['name'] = "Sales"
-        //result['type'] = "bar"
-        //result['data'] = [5, 20, 45, 10, 10, 20]
-        //[data: result as JSON]
-        //[data: result]
-        //String s =User.findAll()
+     }
 
-       // ArrayList listOfUsers=User.findAll()
-
-
-        //System.out.println("Data is : " +listOfUsers);
-      //  return ([listOfUsers:listOfUsers])
-
-
+    def displaySearch(){
+        render(view: "search")
     }
 
     def searchadmin(String user,Integer max)
