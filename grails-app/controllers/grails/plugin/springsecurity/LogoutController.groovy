@@ -27,16 +27,8 @@ class LogoutController {
      * Index action. Redirects to the Spring security logout uri.
      */
     def index = {
-       /* if (!request.post && SpringSecurityUtils.getSecurityConfig().logout.postOnly) {
-            response.sendError HttpServletResponse.SC_METHOD_NOT_ALLOWED // 405
-            return
-        }*/
-        if (springSecurityService.isLoggedIn()) {
-            session.invalidate()
-            redirect uri: SpringSecurityUtils.securityConfig.logout.afterLogoutUrl
-        } else {
-          //  redirect action: auth, params: params
-        }
+        session.invalidate()
+        redirect uri: "/"
     }
 
 }

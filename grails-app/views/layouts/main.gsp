@@ -13,21 +13,42 @@
 		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
-  		<asset:stylesheet src="application.css"/>
-		<asset:javascript src="application.js"/>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <asset:stylesheet src="application.css"/>
+        		<asset:javascript src="application.js"/>
+
 		-->
+
 		        <link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
                 <link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
                 <asset:javascript src="jquery-1.10.2.min.js"/>
                 <asset:javascript src="bootstrap.min.js"/>
                 <asset:stylesheet href="bootstrap.min.css"/>
                 <asset:stylesheet href="font-awesome.min.css"/>
+                <g:layoutHead/>
 
 	</head>
+    <div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="miles_logo.png" alt="Grails"/></a></div>
+
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="miles_logo.png" alt="Grails"/></a></div>
-		<g:layoutBody/>
+	 <nav class="navbar navbar-default" role="navigation">
+                       <div>
+                          <ul class="nav navbar-nav">
+                            <li>
+                             <nav:primary/>
+                             </li>
+                          </ul>
+                       </div>
+        </nav>
+
+
+        <div class="table table-bordered table-right datagrid">
+        <g:layoutBody/>
+        </div>
+
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+
 	</body>
 </html>
