@@ -31,7 +31,7 @@
 					
 				</li>
 				</g:if>
-			
+			a
 				<g:if test="${userRoleInstance?.user}">
 				<li class="fieldcontain">
 					<span id="user-label" class="property-label"><g:message code="userRole.user.label" default="User" /></span>

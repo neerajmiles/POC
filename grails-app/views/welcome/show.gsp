@@ -6,13 +6,25 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<style>
+                        ol {
+                            display: block;
+                            list-style-type: decimal;
+                            margin-top: 1em;
+                            margin-bottom: 1em;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-left: 590px;
+                        }
+        </style>
 	</head>
 	<body>
-	<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+	<h3><g:message code="default.show.label" args="[entityName]" /></h3>
+	<div id="loginModal" class="well form-search" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
     <div id="show-user" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
