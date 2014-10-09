@@ -17,8 +17,11 @@ class UserRoleController {
         respond UserRole.list(params), model:[userRoleInstanceCount: UserRole.count()]
     }
 
-    def show(UserRole userRoleInstance) {
-        respond userRoleInstance
+    def show(String userRoleInstance)
+    {
+       respond UserRole.list()[1]
+      //  respond Role.findByAuthority(key)
+        println("User Role : "+userRoleInstance)
     }
 
     def create() {
@@ -48,8 +51,10 @@ class UserRoleController {
         }
     }
 
-    def edit(UserRole userRoleInstance) {
+    def edit(String userRoleInstance) {
+        println("Edit "+userRoleInstance)
         respond userRoleInstance
+
     }
 
     @Transactional
