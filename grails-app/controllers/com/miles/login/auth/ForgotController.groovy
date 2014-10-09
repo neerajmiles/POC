@@ -56,8 +56,6 @@ class ForgotController {
             body(view:'/mail/mailTemplate', model: [link:emailUrl])
 
         }
-        //  temp = new String(decodedData)
-        // println "Temp Data :  " + temp
 
 
     }

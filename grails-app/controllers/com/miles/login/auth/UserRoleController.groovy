@@ -7,7 +7,7 @@ import grails.transaction.Transactional
 import org.springframework.security.access.annotation.Secured
 
 @Transactional(readOnly = true)
-@Secured('permitAll')
+
 class UserRoleController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -19,9 +19,7 @@ class UserRoleController {
 
     def show(String userRoleInstance)
     {
-       respond UserRole.list()[1]
-      //  respond Role.findByAuthority(key)
-        println("User Role : "+userRoleInstance)
+      respond UserRole.list()[2]
     }
 
     def create() {
@@ -53,7 +51,7 @@ class UserRoleController {
 
     def edit(String userRoleInstance) {
         println("Edit "+userRoleInstance)
-        respond userRoleInstance
+        respond UserRole.list()[1]
 
     }
 

@@ -8,8 +8,7 @@
 	</label>
 	<g:textField name="username" required="" value="${userInstance?.username}"/>
 
-</div>
-</p>
+</div></p>
 
 <p><div align ="center" class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required" >
 	<label for="password">
@@ -18,8 +17,7 @@
 	</label>
 	<g:textField name="password" required="" value="${userInstance?.password}"disabled="true"/>
 
-</div>
-</p>
+</div></p>
 
 <p><div align ="center" class="fieldcontain ${hasErrors(bean: userInstance, field: 'email', 'error')} required">
 	<label for="email">
@@ -28,13 +26,12 @@
 	</label>
 	<g:textField name="email" required="" value="${userInstance?.email}"/>
 
-</div>
-</p>
+</div></p>
 
 
 
 
-</div>
+
 
 
 
