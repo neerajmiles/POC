@@ -45,10 +45,11 @@ class WelcomeController {
             println "User"+user
         }
        params.max = Math.min(max ?: 10, 100)
-       render User.findAll() as JSON
+       render User.findAllByUsernameLike("${user}%") as JSON
      }
 
-    def displaySearch(){
+    def displaySearch(String user){
+        println "User:"+user
         render(view: "search")
     }
 

@@ -3,7 +3,7 @@
 
     <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 
 <g:set var="entityName" value="${message(code: 'welcome.label', default: 'Welcome')}" />
       <asset:javascript src="jquery-1.10.2.min.js"/>
@@ -13,6 +13,8 @@
       <asset:javascript src="MainController.js"/>
       <asset:javascript src="search.js"/>
       <asset:javascript src="angularjs.js"/>
+      <asset:javascript src="bootstrap.min.js"/>
+      <asset:javascript src="grid.js"/>
       <asset:javascript src="ng-grid.min.js"/>
       <asset:stylesheet href="angular_css.css"/>
       <asset:stylesheet href="ng-grid.css"/>
@@ -107,9 +109,11 @@
                 </ul>
 		<label>Search :</label>
 		<input name="user" id="user" type="text" required  ng-model="keywords" class="input-medium search-query" placeholder="Keywords...">
-			<button class="btn" ng-click="search()">Go!</button>
+			<button type="submit" class="btn" ng-click="search()">Go!
+			</button>
+            <div id="basic" class="gridStyle" ng-show="showGridFlag" ng-grid="gridOptions"></div>
     </form>
-    <div class="gridStyle" ng-show="showGridFlag" ng-grid="gridOptions"></div>
+
 </div>
 
 
@@ -134,30 +138,30 @@ function drop(ev) {
 }
 
 var app=angular.module('dd', ['ngGrid']);
-function SearchCtrl($window,$scope,$http) {
-//app.controller('SearchCtrl', function($window,$scope,$http) {
+function SearchCtrl($window,$scope,$rootScope,$http) {
+     $scope.showGridFlag='false';
 	// The function that will be executed on button click (ng-click="search()")
 	$scope.search = function()
         {
-         $http.get('/loginApp/welcome/search').success(function(data) {
-                                                               $scope.users = data;
-                                                             });
-        $scope.showGridFlag='true';
-        console.log($scope.gridOptions);
-        $scope.gridOptions = {  data: 'users',
-                 enableRowSelection: false,
-                 enableCellEditOnFocus: true,
-                 multiSelect: false,
-                columnDefs: [
-                   { field: 'class', displayName: 'Class', enableCellEdit: false } ,
-                   { field: 'id', displayName: 'ID', enableCellEdit: false },
-                   { field: 'accountExpired', displayName: 'AccountExpired', enableCellEdit: false },
-                   { field: 'accountLocked', displayName: 'AccountLocked', enableCellEdit: false },
-                   { field: 'email', displayName: 'Email', enableCellEdit: false },
-                   { field: 'enabled', displayName: 'Enabled', enableCellEdit: false }
-                 ]
-               };
-        }
+
+		var searchval = $("input[name=user]").val();
+		alert(searchval);
+         var link ="";
+           if(searchval=='')
+           {
+                form.user.focus();
+                link = "#"
+                document.form.action = link;
+                $window.location.href = link;
+
+           }
+           else
+           {
+                        link = "/loginApp/welcome/displaySearch?user="+searchval
+                        $window.location.href = link;
+
+           }
+      }
 	};
 
 
@@ -241,7 +245,7 @@ var DropTarget= function () {
     };
 }
 // app.js
-angular.module("dd", [])
+angular.module("dd", ['ngGrid'])
     .directive("ddDraggable", Draggable)
     .directive("ddDropTarget", DropTarget);
 // DraggableDirective.js

@@ -18,6 +18,10 @@ class BootStrap {
         def testUser2 = new User(username: 'user1', password: 'password',email: "neeraj.yadav@miles.in")
         testUser2.save(flush: true)
 
+        100.times{count ->
+            new User(username: 'user'+count+count, password: 'password',email: "neeraj.yadav@miles.in").save(flush: true)
+        }
+
 
         UserRole.create testUser, userRole, true
         UserRole.create testUser2, userRole, true
