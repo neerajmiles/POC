@@ -104,8 +104,12 @@
      &nbsp<font color="white"><sec:username /> (<g:link controller="logout"> <font color="white">Sign Out</font> </g:link>)
 
                 <ul>
-                    <li><a class="home" href="${createLink(uri: '/')}"><font color="white"><g:message code="default.home.label"/></font></a></li>
+               <li><a class="home" href="${createLink(uri: '/')}"><font color="white"><g:message code="default.home.label"/></font></a></li>
+               <sec:ifAnyGranted roles="ROLE_ADMIN">
                     <li><g:link class="create" action="create"><font color="white"><g:message code="New User" args="[entityName]" /></font></g:link></li>
+               </sec:ifAnyGranted>
+
+
                 </ul>
 		<label>Search :</label>
 		<input name="user" id="user" type="text" required  ng-model="keywords" class="input-medium search-query" placeholder="Keywords...">

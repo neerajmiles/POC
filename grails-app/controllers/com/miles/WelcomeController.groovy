@@ -2,15 +2,12 @@ package com.miles
 
 import com.miles.login.auth.User
 import grails.converters.JSON
-import groovy.json.JsonBuilder
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-import org.springframework.security.access.annotation.Secured
 
 @Transactional(readOnly = true)
 
-@Secured('permitAll')
+//@Secured('permitAll')
 
 class WelcomeController {
 
@@ -22,9 +19,8 @@ class WelcomeController {
     }
 
     def show(User userInstance) {
-        respond userInstance
+        redirect userInstance
     }
-
 
     /* Org
     def search(String user,Integer max)
@@ -65,30 +61,32 @@ class WelcomeController {
     }
 
 
-    def create() {
-        respond new Welcome(params)
+    def create()
+    {
+        respond new User(params)
     }
 
     @Transactional
-    def save(Welcome welcomeInstance) {
-        if (welcomeInstance == null) {
+
+    def save(User userInstance) {
+        if (userInstance == null) {
             notFound()
             return
         }
 
-        if (welcomeInstance.hasErrors()) {
-            respond welcomeInstance.errors, view:'create'
+        if (userInstance.hasErrors()) {
+            respond userInstance.errors, view:'create'
             return
         }
 
-        welcomeInstance.save flush:true
+        userInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'welcome.label', default: 'Welcome'), welcomeInstance.id])
-                redirect welcomeInstance
+                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
+                redirect userInstance
             }
-            '*' { respond welcomeInstance, [status: CREATED] }
+            '*' { respond userInstance, [status: CREATED] }
         }
     }
 
