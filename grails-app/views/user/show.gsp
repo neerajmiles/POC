@@ -95,20 +95,13 @@
 				</g:if>
 			<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
             				<fieldset  align="center"class="buttons">
-            					<p><g:link class="btn" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link></p>
-
-
-            					<sec:ifAnyGranted roles="ROLE_USER">
-            					<g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" disabled="true"/>
-            					</sec:ifAnyGranted>
-                                <fieldset class="buttons">
+            	<p><g:link class="btn" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link></p>
+        					<g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" disabled="true"/>
+                               <fieldset class="buttons">
                                 <div class="control-group">
                                      <div class="controls">
-                                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                            <g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 
-                                <g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-
-                                </sec:ifAnyGranted>
                                      </div>
                                 </div>
                                 </fieldset>
