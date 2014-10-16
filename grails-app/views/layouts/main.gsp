@@ -34,15 +34,21 @@
     <div id="grailsLogo" role="banner"><a href="#"><asset:image src="miles_logo.png" alt="Grails"/></a></div>
 
 	<body>
+
 	 <nav class="navbar navbar-default" role="navigation">
                        <div>
                           <ul class="nav navbar-nav">
-                            <li>
+                            <ul>
+<sec:ifAnyGranted roles="ROLE_ADMIN">
                              <nav:primary/>
-                             </li>
+ </sec:ifAnyGranted>
+
+                             </ul>
                           </ul>
                        </div>
         </nav>
+
+
 
 
         <div class="table table-bordered table-right datagrid">
