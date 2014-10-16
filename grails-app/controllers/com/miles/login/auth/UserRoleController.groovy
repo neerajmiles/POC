@@ -19,6 +19,7 @@ class UserRoleController {
 
     def show(String userRoleInstance)
     {
+        println "My data : " +UserRole.findAll()
       respond UserRole.list()[2]
     }
 
