@@ -149,7 +149,7 @@ function SearchCtrl($window,$scope,$rootScope,$http) {
         {
 
 		var searchval = $("input[name=user]").val();
-		alert(searchval);
+	//	alert(searchval);
          var link ="";
            if(searchval=='')
            {
